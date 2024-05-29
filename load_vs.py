@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Path to your JSON file (text)
-filename = 'data\g1.json' # the text dataset in json form
+filename = 'data\articles.json' # the text dataset in json form
 
 # Load the JSON file into a list
 with open(filename, 'r', encoding='utf-8') as file:
