@@ -20,4 +20,4 @@ persist_directory = "./data/" # the path for the vector database
 # persist_directory: the path for the vector database
 vector_store = Chroma.from_texts(data_list,OpenAIEmbeddings(model="text-embedding-ada-002"),persist_directory=persist_directory)
 
-vector_store.persist() # ?
+vector_store.persist()
