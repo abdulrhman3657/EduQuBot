@@ -4,6 +4,8 @@ EduBot is based on a fine-tuned Large Language Model with retrieval augmented ge
 
 
 run load_vs.py first to load the database
+
+
 load_vs.py is only used to create the vector database for the first time.
 
 
