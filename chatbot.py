@@ -32,15 +32,6 @@ def get_vectorstore():
     return vector_store # get the vector data from the database
 
 
-# A vector store retriever is a retriever that uses a vector store to retrieve 
-# documents. It is a lightweight wrapper around the vector store class to make
-# it conform to the retriever interface. It uses the search methods implemented
-# by a vector store, like similarity search 
-# and MMR, to query the texts in the vector store.
-# By default, the vector store retriever uses similarity search.
-# You can also set a retrieval method that sets a similarity score threshold 
-# and only returns documents with a score above that threshold.
-
 
 def get_context_retriever_chain(vector_store):
     llm = ChatOpenAI(model="gpt-3.5-turbo-16k", temperature=0.5,  max_tokens=1200)  # ft:gpt-3.5-turbo-1106:personal::9G7Xz5en
@@ -93,10 +84,6 @@ def get_conversational_rag_chain(retriever_chain):
 
 def get_response(user_input): 
 
-    # Session State is a way to share variables between reruns, for each user session.
-    # Append user's question to the chat history
-    # a session exist as long as the web tab is open
-    # sessions are independent
     # session_state stores the values of the variables
     st.session_state.chat_history.append(HumanMessage(content=user_input)) # appened the model response every time get_response() is called
     
